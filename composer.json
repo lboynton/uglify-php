@@ -1,0 +1,19 @@
+{
+    "name": "smallhadroncollider/UglifyPHP",
+    "description": "A simple PHP wrapper for Uglify JS and Uglify CSS",
+    "keywords": ["uglify", "minify", "minification", "js", "css", "javascript", "uglifyjs", "uglifycss"],
+    "homepage": "https://github.com/smallhadroncollider/UglifyPHP",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Small Hadron Collider",
+            "email": "mark@smallhadroncollider.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "autoload": {
+        "psr-0": { "UglifyPHP": "src/" }
+    }
+}
