@@ -36,6 +36,51 @@ if (CSS::installed()) {
 }
 ```
 
+### Options
+[Uglify JS](https://github.com/mishoo/UglifyJS2) and [Uglify CSS](https://github.com/fmarcia/UglifyCSS) both support numerous options. You can invoke these by passing an associative array of options to the `minify()` function. Options without a value (e.g. `--wrap`, `--cute-comments`) should be set with a value of `true`. All other values should be passed as strings (even numeric arguments).
+
+```php
+$js->minify('output.js', array(
+    'screw-ie8' => true,
+    'comments' => 'all'
+));
+
+$css->minify('output.css', array(
+    'cute-comments' => true,
+    'max-line-len' => '50'
+));
+```
+
+#### Available Options
+See [Uglify JS](https://github.com/mishoo/UglifyJS2) and [Uglify CSS](https://github.com/fmarcia/UglifyCSS) documentation for details.
+
+##### JS
+- source-map
+- source-map-root
+- source-map-url
+- in-source-map
+- screw-ie8
+- prefix
+- output
+- beautify
+- mangle
+- reserved
+- compress
+- define
+- comments
+- acorn
+- spidermonkey
+- self
+- wrap
+- export-all
+
+##### CSS
+- max-line-len
+- expand-vars
+- ugly-comments
+- cute-comments
+
+
 ## Using with a Sandboxed LAMP Server
 
 If you are using a sandboxed LAMP server, such as MAMP, you may find that, even though you have installed Uglify JS/CSS, the `installed()` function returns false. These servers often run in a sandbox which does not support externally installed libraries. There are two approaches that might work (the second being MAMP specific).
