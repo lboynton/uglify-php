@@ -4,13 +4,14 @@
     "keywords": ["uglify", "minify", "minification", "js", "css", "javascript", "uglifyjs", "uglifycss"],
     "homepage": "https://github.com/smallhadroncollider/uglify-php",
     "license": "MIT",
+    "type": "library",
     "authors": [
         {
             "name": "Small Hadron Collider",
-            "email": "mark@smallhadroncollider.com"
+            "email": "mark@smallhadroncollider.com",
+            "homepage": "http://smallhadroncollider.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.0"
     },
