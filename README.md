@@ -2,6 +2,10 @@
 
 A simple PHP wrapper for [Uglify JS](https://github.com/mishoo/UglifyJS2) and [Uglify CSS](https://github.com/fmarcia/UglifyCSS)
 
+## Installation
+
+Simply run `composer require smallhadroncollider/uglify-php`. You'll need to make sure that your `minimum-stability` requirement in `composer.json` is set to `dev`.
+
 ## Usage
 
 First make sure you've installed Uglify JS and/or Uglify CSS on your system. You can check for their presence with `which uglifyjs` and `which uglifycss`.
