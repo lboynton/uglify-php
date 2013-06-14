@@ -1,10 +1,11 @@
 # UglifyPHP
+v1.0.0
 
 A simple PHP wrapper for [Uglify JS](https://github.com/mishoo/UglifyJS2) and [Uglify CSS](https://github.com/fmarcia/UglifyCSS)
 
 ## Installation
 
-Simply run `composer require smallhadroncollider/uglify-php`. You'll need to make sure that your `minimum-stability` requirement in `composer.json` is set to `dev`.
+Simply run `composer require smallhadroncollider/uglify-php`.
 
 ## Usage
 
