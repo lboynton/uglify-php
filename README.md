@@ -1,5 +1,5 @@
 # UglifyPHP
-v1.0.0
+v1.0.2
 
 A simple PHP wrapper for [Uglify JS](https://github.com/mishoo/UglifyJS2) and [Uglify CSS](https://github.com/fmarcia/UglifyCSS)
 
@@ -114,6 +114,19 @@ After:
 
 export PATH="$PATH:/usr/local/bin"
 ```
+
+## Version History
+
+### 1.0.2
+- Fixed file path space bug
+
+### 1.0.1
+
+- Added options support
+
+### 1.0.0
+
+First release
 
 ## License
 

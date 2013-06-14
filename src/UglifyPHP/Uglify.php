@@ -57,9 +57,12 @@ abstract class Uglify
 
     public function minify($path, $opts = array())
     {
-        $exec = static::$location;
-        $files = implode(' ', $this->files);
+        $path = escapeshellarg($path);
+        $files = implode(' ', array_map(function ($file) {
+            return escapeshellarg($file);
+        }, $this->files));
         $options = $this->options_string($opts);
+        $exec = static::$location;
 
         if (static::$option_place === 'before') {
             $cmd = "{$exec} {$options} {$files} > {$path}";
@@ -85,7 +88,7 @@ abstract class Uglify
                 if ($value === true) {
                     $options .= '--' . $name;
                 } else if (is_string($value)) {
-                    $options .= '--' . $name . ' ' . $value;
+                    $options .= '--' . $name . ' ' . escapeshellarg($value);
                 } else {
                     throw new \Exception('Value of "' . $name . '" in ' . get_called_class() . ' must be a string');
                 }
