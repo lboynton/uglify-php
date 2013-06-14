@@ -55,11 +55,17 @@ abstract class Uglify
         $this->files = $files;
     }
 
-    public function minify($path)
+    public function minify($path, $opts = array())
     {
         $exec = static::$location;
         $files = implode(' ', $this->files);
-        $cmd = "{$exec} {$files} > {$path}";
+        $options = $this->options_string($opts);
+
+        if (static::$option_place === 'before') {
+            $cmd = "{$exec} {$options} {$files} > {$path}";
+        } else {
+            $cmd = "{$exec} {$files} {$options} > {$path}";
+        }
 
         exec($cmd, $output, $return);
 
@@ -68,5 +74,26 @@ abstract class Uglify
         }
 
         return false;
+    }
+
+    private function options_string($opts)
+    {
+        $options = '';
+
+        foreach ($opts as $name => $value) {
+            if (in_array($name, static::$options)) {
+                if ($value === true) {
+                    $options .= '--' . $name;
+                } else if (is_string($value)) {
+                    $options .= '--' . $name . ' ' . $value;
+                } else {
+                    throw new \Exception('Value of "' . $name . '" in ' . get_called_class() . ' must be a string');
+                }
+            } else {
+                throw new \Exception('Unsupported option "' . $name . '" in ' . get_called_class());
+            }
+        }
+
+        return $options;
     }
 }
