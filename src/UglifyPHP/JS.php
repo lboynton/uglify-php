@@ -1,8 +1,8 @@
 <?php
 
-namespace smallhadroncollider\UglifyPHP;
+namespace UglifyPHP;
 
-class JS extends UglifyPHP
+class JS extends Uglify
 {
     protected static $location = 'uglifyjs';
     protected static $exists_check = ' -V';

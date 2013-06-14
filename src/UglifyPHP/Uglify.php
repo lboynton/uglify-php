@@ -1,8 +1,8 @@
 <?php
 
-namespace smallhadroncollider\UglifyPHP;
+namespace UglifyPHP;
 
-abstract class UglifyPHP
+abstract class Uglify
 {
     /**
      * Sets the location of the executable

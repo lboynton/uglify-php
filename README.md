@@ -7,8 +7,8 @@ A simple PHP wrapper for [Uglify JS](https://github.com/mishoo/UglifyJS2) and [U
 First make sure you've installed Uglify JS and/or Uglify CSS on your system. You can check for their presence with `which uglifyjs` and `which uglifycss`.
 
 ```php
-use smallhadroncollider\UglifyPHP\JS;
-use smallhadroncollider\UglifyPHP\CSS;
+use UglifyPHP\JS;
+use UglifyPHP\CSS;
 
 if (JS::installed()) {
     $js = new JS(array('file-1.js', 'file-2.js', 'file-3.js'));
