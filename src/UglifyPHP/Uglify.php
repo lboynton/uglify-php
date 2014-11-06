@@ -82,19 +82,21 @@ abstract class Uglify
     private function options_string($opts)
     {
         $options = '';
+        $space = '';
 
         foreach ($opts as $name => $value) {
             if (in_array($name, static::$options)) {
                 if ($value === true) {
-                    $options .= '--' . $name;
+                    $options .= $space . '--' . $name;
                 } else if (is_string($value)) {
-                    $options .= '--' . $name . ' ' . escapeshellarg($value);
+                    $options .= $space . '--' . $name . ' ' . escapeshellarg($value);
                 } else {
                     throw new \Exception('Value of "' . $name . '" in ' . get_called_class() . ' must be a string');
                 }
             } else {
                 throw new \Exception('Unsupported option "' . $name . '" in ' . get_called_class());
             }
+            $space = ' ';
         }
 
         return $options;
